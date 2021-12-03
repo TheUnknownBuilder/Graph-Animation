@@ -1,9 +1,10 @@
 import pygame
+import sys
 from graph_data import graph
 
 # constants 
-display_width = 800
-display_height = 600
+display_width = 1200
+display_height = 900
 radius = 30 # node size
 
 def run():
@@ -25,7 +26,11 @@ def run():
     pygame.display.update() # copy screen to display
 
     
-    while 1:  
+    while 1: 
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.display.quit()
+                sys.exit() 
         clock.tick(60)
 
 # def main():

@@ -96,4 +96,4 @@ def circle_fill(xy, line_color, fill_color, radius, thickness):
     pygame.draw.circle(screen, fill_color, xy, radius - thickness)
 
 
-run()
+# run()
