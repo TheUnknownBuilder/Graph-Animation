@@ -3,8 +3,8 @@ import pygame
 import sys
 from graph_data import graph
 
-display_width = 1600
-display_height = 1200
+display_width = 1200
+display_height = 900
 radius = 30
 
 white = (255,255,255)
@@ -54,4 +54,4 @@ def build_edges():
       if eid not in edges:
         edges[eid] = (n1,n2)
 
-run()
+# run()
