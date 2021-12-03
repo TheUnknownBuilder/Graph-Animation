@@ -2,17 +2,15 @@
 import pygame
 from graph_data import graph
 
-# constants
 display_width = 800
 display_height = 600
 radius = 30
 
-# colors
-white = (255,255,255) # discovered state
-blue = (50,50,160) # completed state fill
+white = (255,255,255)
+blue = (50,50,160)
 
 def run():
-  global screen, edges # to share with other methods
+  global screen, edges
 
   build_edges()
   pygame.init()
@@ -25,22 +23,21 @@ def run():
   for n1,n2 in edges:
     pygame.draw.line(screen, white, graph[n1][0], graph[n2][0],2)
 
-  for xy, _ in graph: # draw cicle at each node center
+  for xy, _ in graph: 
     circle_fill(xy, white, blue, 25, 2)
 
   pygame.display.update()
 
-  while 1:  # wait for stop
+  while 1: 
     clock.tick(60)
 
 def circle_fill(xy, line_color, fill_color, radius, thickness):
   global screen
-  # draw grey circle and then a smaller black to get 2 pixel circle
+  
   pygame.draw.circle(screen, line_color, xy, radius)
   pygame.draw.circle(screen, fill_color, xy, radius - thickness)
   
-def edge_id(n1,n2): # normalize id for either order
-  # (1,2) and (2,1) become (1,2)
+def edge_id(n1,n2):
   return tuple(sorted((n1,n2))) 
 
 def build_edges():
