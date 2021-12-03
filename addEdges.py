@@ -1,9 +1,10 @@
 # now collect edges into dict, and draw them
 import pygame
+import sys
 from graph_data import graph
 
-display_width = 800
-display_height = 600
+display_width = 1600
+display_height = 1200
 radius = 30
 
 white = (255,255,255)
@@ -29,6 +30,10 @@ def run():
   pygame.display.update()
 
   while 1: 
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.display.quit()
+            sys.exit()
     clock.tick(60)
 
 def circle_fill(xy, line_color, fill_color, radius, thickness):
@@ -48,3 +53,5 @@ def build_edges():
       eid = edge_id(n1,n2)
       if eid not in edges:
         edges[eid] = (n1,n2)
+
+run()
