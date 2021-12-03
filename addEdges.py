@@ -54,4 +54,4 @@ def build_edges():
       if eid not in edges:
         edges[eid] = (n1,n2)
 
-run()
+# run()
