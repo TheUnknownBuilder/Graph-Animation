@@ -4,7 +4,7 @@ import fullAnimation
 
 prompt = """Enter a number:\n
   circles: 1  - basic drawing skills in pygame\n
-  add edges: 2 - adding graph edges to drawing
+  add edges: 2 - adding graph edges to drawing\n
   full animation: 3 - full animation to the graph
   """
   
