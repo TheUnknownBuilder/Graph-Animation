@@ -28,9 +28,9 @@ def run():
     while 1:  
         clock.tick(60)
 
-def main():
-    run()
+# def main():
+#     run()
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
